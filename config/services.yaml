@@ -27,5 +27,11 @@ services:
         resource: '../src/Command'
         tags: ['console.command']
 
+    App\Repository\RecipeRepository:
+        public: true
+        factory: ['@doctrine.orm.default_entity_manager', 'getRepository']
+        arguments:
+          - App\Entity\Recipe
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
