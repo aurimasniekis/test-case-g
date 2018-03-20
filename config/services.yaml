@@ -33,5 +33,11 @@ services:
         arguments:
           - App\Entity\Recipe
 
+    App\Repository\RecipeRatingRepository:
+        public: true
+        factory: ['@doctrine.orm.default_entity_manager', 'getRepository']
+        arguments:
+          - App\Entity\RecipeRating
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

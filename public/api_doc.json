@@ -115,6 +115,23 @@
           "Recipe"
         ],
         "description": "List all records",
+        "parameters": [
+          {
+            "name": "cuisine",
+            "in": "query",
+            "description": "Filter by Cuisine"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "Fetch from"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Fetch size"
+          }
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -319,6 +336,56 @@
                           "$ref": "#/components/schemas/Recipe"
                         }
                       }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/recipes/{recipeId}/{rating}": {
+      "get": {
+        "tags": [
+          "Recipe Rating"
+        ],
+        "description": "Rate a Recipe",
+        "parameters": [
+          {
+            "name": "recipeId",
+            "in": "path",
+            "description": "Recipe Id"
+          },
+          {
+            "name": "rating",
+            "in": "path",
+            "description": "Rating"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
                     }
                   ]
                 }

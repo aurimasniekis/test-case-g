@@ -16,9 +16,9 @@ abstract class BaseController
     {
         return new JsonResponse(
             [
-                'code' => $code,
+                'code'    => $code,
                 'message' => $message,
-                'date' => []
+                'date'    => [],
             ],
             $code
         );
@@ -28,9 +28,9 @@ abstract class BaseController
     {
         return new JsonResponse(
             [
-                'code' => $code,
+                'code'    => $code,
                 'message' => $message,
-                'date' => []
+                'date'    => [],
             ],
             $code
         );
@@ -40,9 +40,9 @@ abstract class BaseController
     {
         return new JsonResponse(
             [
-                'code' => $code,
+                'code'    => $code,
                 'message' => 'Success',
-                'data' => $data,
+                'data'    => $data,
             ],
             $code
         );

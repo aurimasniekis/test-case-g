@@ -709,6 +709,7 @@ class Recipe implements JsonSerializable
 
         return $this;
     }
+
     /**
      * @param DateTime|string $createdAt
      *
@@ -752,32 +753,32 @@ class Recipe implements JsonSerializable
     public function jsonSerialize()
     {
         return [
-            'id' => $this->getId(),
-            'created_at' => $this->getCreatedAt(),
-            'updated_at' => $this->getUpdatedAt(),
-            'box_type' => $this->getBoxType(),
-            'title' => $this->getTitle(),
-            'slug' => $this->getSlug(),
-            'short_title' => $this->getShortTitle(),
-            'marketing_description' => $this->getMarketingDescription(),
-            'calories_kcal' => $this->getCaloriesKcal(),
-            'protein_grams' => $this->getProteinGrams(),
-            'fat_grams' => $this->getFatGrams(),
-            'carbs_grams' => $this->getCarbsGrams(),
-            'bulletpoint1' => $this->getBulletpoint1(),
-            'bulletpoint2' => $this->getBulletpoint2(),
-            'bulletpoint3' => $this->getBulletpoint3(),
-            'recipe_diet_type_id' => $this->getRecipeDietTypeId(),
-            'season' => $this->getSeason(),
-            'base' => $this->getBase(),
-            'protein_source' => $this->getProteinSource(),
+            'id'                       => $this->getId(),
+            'created_at'               => $this->getCreatedAt(),
+            'updated_at'               => $this->getUpdatedAt(),
+            'box_type'                 => $this->getBoxType(),
+            'title'                    => $this->getTitle(),
+            'slug'                     => $this->getSlug(),
+            'short_title'              => $this->getShortTitle(),
+            'marketing_description'    => $this->getMarketingDescription(),
+            'calories_kcal'            => $this->getCaloriesKcal(),
+            'protein_grams'            => $this->getProteinGrams(),
+            'fat_grams'                => $this->getFatGrams(),
+            'carbs_grams'              => $this->getCarbsGrams(),
+            'bulletpoint1'             => $this->getBulletpoint1(),
+            'bulletpoint2'             => $this->getBulletpoint2(),
+            'bulletpoint3'             => $this->getBulletpoint3(),
+            'recipe_diet_type_id'      => $this->getRecipeDietTypeId(),
+            'season'                   => $this->getSeason(),
+            'base'                     => $this->getBase(),
+            'protein_source'           => $this->getProteinSource(),
             'preparation_time_minutes' => $this->getPreparationTimeMinutes(),
-            'shelf_life_days' => $this->getShelfLifeDays(),
-            'equipment_needed' => $this->getEquipmentNeeded(),
-            'origin_country' => $this->getOriginCountry(),
-            'recipe_cuisine' => $this->getRecipeCuisine(),
-            'in_your_box' => $this->getInYourBox(),
-            'gousto_reference' => $this->getGoustoReference(),
+            'shelf_life_days'          => $this->getShelfLifeDays(),
+            'equipment_needed'         => $this->getEquipmentNeeded(),
+            'origin_country'           => $this->getOriginCountry(),
+            'recipe_cuisine'           => $this->getRecipeCuisine(),
+            'in_your_box'              => $this->getInYourBox(),
+            'gousto_reference'         => $this->getGoustoReference(),
         ];
     }
 }

@@ -60,7 +60,7 @@ class ImportDataCommand extends ContainerAwareCommand
         $em = $this->getContainer()->get(RecipeRepository::class);
 
         $columnMapping = $this->getColumnMapping();
-        $results = [];
+        $results       = [];
 
         $columnPositionMap = [];
 
@@ -97,32 +97,32 @@ class ImportDataCommand extends ContainerAwareCommand
     protected function getColumnMapping(): array
     {
         return [
-            'id' => 'setId',
-            'created_at' => 'setCreatedAt',
-            'updated_at' => 'setUpdatedAt',
-            'box_type' => 'setBoxType',
-            'title' => 'setTitle',
-            'slug' => 'setSlug',
-            'short_title' => 'setShortTitle',
-            'marketing_description' => 'setMarketingDescription',
-            'calories_kcal' => 'setCaloriesKcal',
-            'protein_grams' => 'setProteinGrams',
-            'fat_grams' => 'setFatGrams',
-            'carbs_grams' => 'setCarbsGrams',
-            'bulletpoint1' => 'setBulletpoint1',
-            'bulletpoint2' => 'setBulletpoint2',
-            'bulletpoint3' => 'setBulletpoint3',
-            'recipe_diet_type_id' => 'setRecipeDietTypeId',
-            'season' => 'setSeason',
-            'base' => 'setBase',
-            'protein_source' => 'setProteinSource',
+            'id'                       => 'setId',
+            'created_at'               => 'setCreatedAt',
+            'updated_at'               => 'setUpdatedAt',
+            'box_type'                 => 'setBoxType',
+            'title'                    => 'setTitle',
+            'slug'                     => 'setSlug',
+            'short_title'              => 'setShortTitle',
+            'marketing_description'    => 'setMarketingDescription',
+            'calories_kcal'            => 'setCaloriesKcal',
+            'protein_grams'            => 'setProteinGrams',
+            'fat_grams'                => 'setFatGrams',
+            'carbs_grams'              => 'setCarbsGrams',
+            'bulletpoint1'             => 'setBulletpoint1',
+            'bulletpoint2'             => 'setBulletpoint2',
+            'bulletpoint3'             => 'setBulletpoint3',
+            'recipe_diet_type_id'      => 'setRecipeDietTypeId',
+            'season'                   => 'setSeason',
+            'base'                     => 'setBase',
+            'protein_source'           => 'setProteinSource',
             'preparation_time_minutes' => 'setPreparationTimeMinutes',
-            'shelf_life_days' => 'setShelfLifeDays',
-            'equipment_needed' => 'setEquipmentNeeded',
-            'origin_country' => 'setOriginCountry',
-            'recipe_cuisine' => 'setRecipeCuisine',
-            'in_your_box' => 'setInYourBox',
-            'gousto_reference' => 'setGoustoReference',
+            'shelf_life_days'          => 'setShelfLifeDays',
+            'equipment_needed'         => 'setEquipmentNeeded',
+            'origin_country'           => 'setOriginCountry',
+            'recipe_cuisine'           => 'setRecipeCuisine',
+            'in_your_box'              => 'setInYourBox',
+            'gousto_reference'         => 'setGoustoReference',
         ];
     }
 }

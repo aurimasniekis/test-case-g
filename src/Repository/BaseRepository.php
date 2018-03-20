@@ -16,6 +16,7 @@ abstract class BaseRepository extends EntityRepository
     {
         $this->getEntityManager()->persist($object);
     }
+
     public function save(object $object): void
     {
         $em = $this->getEntityManager();
@@ -23,6 +24,7 @@ abstract class BaseRepository extends EntityRepository
         $em->persist($object);
         $em->flush();
     }
+
     public function delete(object $object): void
     {
         $em = $this->getEntityManager();
@@ -30,6 +32,7 @@ abstract class BaseRepository extends EntityRepository
         $em->remove($object);
         $em->flush();
     }
+
     public function flush(): void
     {
         $this->getEntityManager()->flush();
