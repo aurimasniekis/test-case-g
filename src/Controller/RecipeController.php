@@ -105,7 +105,7 @@ class RecipeController extends BaseController
             return $this->error('Not Found', 404);
         }
 
-        $recipe = $this->mapRequestToRecipe($request->request);
+        $recipe = $this->mapRequestToRecipe($request->request, $recipe);
 
         $this->repository->save($recipe);
 
