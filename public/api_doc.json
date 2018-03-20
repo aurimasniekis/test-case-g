@@ -1,0 +1,346 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Test Case G",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8000",
+      "description": "Local Server"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Recipe": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "box_type": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "short_title": {
+            "type": "string"
+          },
+          "marketing_description": {
+            "type": "string"
+          },
+          "calories_kcal": {
+            "type": "integer"
+          },
+          "protein_grams": {
+            "type": "integer"
+          },
+          "fat_grams": {
+            "type": "integer"
+          },
+          "carbs_grams": {
+            "type": "integer"
+          },
+          "bulletpoint1": {
+            "type": "string"
+          },
+          "bulletpoint2": {
+            "type": "string"
+          },
+          "bulletpoint3": {
+            "type": "string"
+          },
+          "recipe_diet_type_id": {
+            "type": "integer"
+          },
+          "season": {
+            "type": "string"
+          },
+          "base": {
+            "type": "string"
+          },
+          "protein_source": {
+            "type": "string"
+          },
+          "preparation_time_minutes": {
+            "type": "integer"
+          },
+          "shelf_life_days": {
+            "type": "integer"
+          },
+          "equipment_needed": {
+            "type": "string"
+          },
+          "origin_country": {
+            "type": "string"
+          },
+          "recipe_cuisine": {
+            "type": "string"
+          },
+          "in_your_box": {
+            "type": "string"
+          },
+          "gousto_reference": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/recipes/": {
+      "get": {
+        "tags": [
+          "Recipe"
+        ],
+        "description": "List all records",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/Recipe"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Recipe"
+        ],
+        "description": "Create a new record",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recipe"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Recipe"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/recipes/{id}": {
+      "get": {
+        "tags": [
+          "Recipe"
+        ],
+        "description": "Fetch a new record",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Record Id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Recipe"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Recipe"
+        ],
+        "description": "Delete a record",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Record Id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Recipe"
+        ],
+        "description": "Update a record",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Record Id"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recipe"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "object",
+                          "$ref": "#/components/schemas/Recipe"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/ApiResponse"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
